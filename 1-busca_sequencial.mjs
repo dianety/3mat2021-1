@@ -1,4 +1,20 @@
-/* copiar comentários iniciais do Fausto; olhar aula depois */
+/*
+    BUSCA SEQUENCIAL
+    
+    Percorre a sequência de dados do início ao fim, comparando cada um deles
+    contra o valor de busca
+
+    Quando encontra o valor de busca, o percurso é interrompido e retorna-se
+    a POSIÇÃO onde foi encontrado o valor de busca
+
+    Caso o valor não tenha sido encontrado após o percurso total da sequência
+    de dados, retorna-se o valor convencional -1 para indicar a inexistência
+    do valor de busca entre os dados
+
+    A busca sequencial NÃO EXIGE que a sequência de dados esteja previamente
+    ordenada
+
+*/
 
 function buscaSequencial(vetor, valorBusca) {
     // percurso com for tradicional
@@ -110,6 +126,10 @@ console.timeEnd('Buscando ABRAAO')
 console.time('Buscando ZELIA')
 console.log(buscaSequencial(nomes,'ZELIA'))
 console.timeEnd('Buscando ZELIA')
+
+console.time('Buscando ORKUTILSON')
+console.log(buscaSequencial(nomes,'ORKUTILSON'))
+console.timeEnd('Buscando ORKUTILSON')
 
 console.time('Buscando FAUSTO')
 console.log(buscaSequencial(nomes,'FAUSTO'))

@@ -8,6 +8,9 @@ possa ser encontrado.
 Determina-se que o valor da busca não existe no conjunto de dados quando a 
 variável que controle o fim da região de busca torna-se menor do que
 o valor correspondente ao início da região de busca.
+
+Se o valor de início for maior que o valor de fim, o valor de busca não existe
+
 */
 let comps = 0 // número de comparações
 
@@ -123,3 +126,23 @@ console.timeEnd('Buscando 6911')
 console.time('Buscando 1604')
 console.log(buscaBinaria(primos, 1604), {comps})
 console.timeEnd('Buscando 1604')
+
+console.log('------------------------------')
+
+import {nomes} from './includes/vetor-nomes.mjs'
+
+console.time('Buscando ORKUTILSON')
+console.log(buscaBinaria(nomes,'ORKUTILSON'), {comps})
+console.timeEnd('Buscando ORKUTILSON')
+
+console.time('Buscando ABRAAO')
+console.log(buscaBinaria(nomes,'ABRAAO'), {comps})
+console.timeEnd('Buscando ABRAAO')
+
+console.time('Buscando FAUSTO')
+console.log(buscaBinaria(nomes,'FAUSTO'), {comps})
+console.timeEnd('Buscando FAUSTO')
+
+console.time('Buscando ZELIA')
+console.log(buscaBinaria(nomes,'ZELIA'), {comps})
+console.timeEnd('Buscando ZELIA')
