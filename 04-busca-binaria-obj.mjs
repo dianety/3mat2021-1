@@ -7,6 +7,21 @@ function buscaBinaria(vetor, fnComp){
     let meio
     while (fim >= ini){
         meio = Math.floor((fim+ini)/2) // Math.floor() arredonda para baixo
+        switch(fnComp(vetor[meio])){
+            case 0:
+                    comps++
+                    return meio
+            case -1:
+                    comps += 2
+                    fim = meio -1
+                    break
+            default:
+                    comps += 2
+                    ini = meio + 1
+        }
+        
+        /* mesma função do switch, mas usando if
+
         if(fnComp(vetor[meio]) === 0){
             comps++
             return meio // achou
@@ -19,6 +34,7 @@ function buscaBinaria(vetor, fnComp){
             comps += 2
             ini = meio +1
         }
+        */
     }
     return -1 // valor de busca não existe no vetor
 }
@@ -77,10 +93,12 @@ console.timeEnd('Buscando nome ABRAAO')
 
 console.log(objNomes[posEncontrado], {comps}) // printa todos os resultados encontrados
 
+
+// essa busca binária não está funcionando, porque a massa de dados está ordenada por first_name, e não por group_name
 console.time('Buscando group_name MARIA')
 console.log(buscaBinaria(objNomes, obj => {
     const valorBusca = 'MARIA'
-    if(obj.group_name === valorBusca)
+    if(objNomes.group_name === valorBusca)
         return 0
     else if(valorBusca < obj.group_name)
         return -1
