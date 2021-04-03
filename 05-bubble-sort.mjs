@@ -15,7 +15,7 @@ function bubbleSort(vetor){
         trocas = 0 // início de uma nova passada
         pass++
         // percurso do vetor do início até o PENÚLTIMO elemento
-        for(let i=0; i<vetor.length-1; i++){
+        for(let i=0; i< vetor.length-1; i++){
             if(vetor[i] > vetor[i+1]){
                 // troca direta em Javascript usando desestruturação de vetores (opção sem usar auxiliar)
                 [vetor[i], vetor [i+1]] = [vetor[i+1], vetor[i]]
@@ -28,7 +28,7 @@ function bubbleSort(vetor){
     } while (trocas>0)
 }
 
-let nums = [7, 4, 9, 0, 6, 1, 8, 2, 5, 3] // pior caso possível: vetor totalmente invertido
+let nums = [7, 4, 9, 0, 6, 1, 8, 2, 5, 3] // pior caso possível: vetor totalmente invertido (o número máximo de passadas é o número de elementos do vetor)
 
 console.log('Antes: ', nums)
 bubbleSort(nums)
