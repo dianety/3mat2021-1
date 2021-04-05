@@ -35,11 +35,11 @@ bubbleSort(nums)
 console.log('Depois: ', nums)
 console.log({totTrocas, comps, pass}) // quando coloca o nome da variável dentro de chaves, o nome delas aparece
 
-import {empresas} from './includes/15-mil-empresas.mjs'
+import {nomes} from './includes/100-mil-nomes.mjs'
 
-console.log('Antes: ', empresas)
-console.time('Ordenando empresas...')
-bubbleSort(empresas)
-console.timeEnd('Ordenando empresas...')
+console.log('Antes: ', nomes)
+console.time('Ordenando nomes...')
+bubbleSort(nomes)
+console.timeEnd('Ordenando nomes...')
 console.log({totTrocas, comps, pass})
-console.log('Depois: ', empresas)
+console.log('Depois: ', nomes)
