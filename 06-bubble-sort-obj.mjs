@@ -26,7 +26,7 @@ function bubbleSort(vetor, fnComp){
 
 import {candidatos} from './includes/candidatos-2018.mjs'
 
-// ordenar pelo nome de batismo dos candidatos
+// ordenar pelo nome de urna dos candidatos
 console.log('Antes: ', candidatos)
 console.time('Ordenando por nome de registro...')
 bubbleSort(candidatos, (a, b) => a.NM_CANDIDATO > b.NM_CANDIDATO)

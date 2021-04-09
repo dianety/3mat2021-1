@@ -141,6 +141,14 @@ const recebeObjeto = objeto => {
     }
 }
 
+/* correção prof
+const recebeObjeto = objeto => {
+   for(let atrib in objeto) {
+      console.log(`${atrib} => ${objeto[atrib]}`)
+   }
+}
+*/
+
 console.log(recebeObjeto(estadosNe[8]))
 
 /* 5) Percorra o vetor estadosNe usando for..of. Para cada objeto no vetor,

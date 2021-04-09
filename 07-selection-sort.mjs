@@ -25,11 +25,11 @@ function selectionSort(vetor){
     
     function encontrarMenor(inicio){
         let menor = inicio 
-        for(let j = inicio+1; j <= vetor.length; j++){
+        for(let j = inicio + 1; j < vetor.length; j++){
             if (vetor[j] < vetor[menor]){
                 menor = j
-                comps++
             }
+            comps++
         }
         return menor
     }
@@ -46,13 +46,20 @@ function selectionSort(vetor){
     }
 }
 
-//let nums = [7, 4, 9, 0, 6, 1, 8, 2, 5, 3]
-let nums = [9, 8, 7, 6, 5, 4 , 3, 2, 1, 0]
+let nums = [7, 4, 9, 0, 6, 1, 8, 2, 5, 3]
+
 selectionSort(nums)
 console.log(nums)
 console.log({trocas, pass, comps})
 
+import {nomes} from './includes/100-mil-nomes.mjs'
 
+//console.log('Antes: ', nomes)
+console.time('Ordenando nomes...')
+selectionSort(nomes)
+console.timeEnd('Ordenando nomes...')
+console.log({trocas, comps, pass})
+console.log('Depois: ', nomes)
 
 
 
