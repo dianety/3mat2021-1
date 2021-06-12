@@ -23,9 +23,35 @@ function quickSort(vetor, fnComp, ini = 0, fim = vetor.length - 1){
         comps++
 
         // quicksort à esquerda
-        quickSort(vetor, ini, div - 1)
+        quickSort(vetor, fnComp, ini, div - 1)
 
         // quicksort à direita
-        quickSort(vetor, div + 1, fim)
+        quickSort(vetor, fnComp, div + 1, fim)
     }
 }
+
+import {candidatos} from './includes/candidatos-2018.mjs'
+
+// ordenar pelo nome de urna dos candidatos
+trocas = 0, comps = 0, passadas = 0
+//console.log('Antes: ', candidatos)
+console.time('Ordenando por nome de registro...')
+//quickSort(candidatos, (a, b) => a.NM_CANDIDATO > b.NM_CANDIDATO)
+
+// Função de comparação considerando múltiplos níveis de ordenação:
+// primeiro por SG_UE, depois por DS_CARGO e, por fim, por NR_CANDIDATO
+quickSort(candidatos, (a, b) => {
+    if(a.SG_UE === b.SG_UE){
+        if(a.DS_CARGO == b.DS_CARGO){
+            return a.NR_CANDIDATO > b.NR_CANDIDATO
+        } else {
+            return a.DS_CARGO > b.DS_CARGO
+        }
+    } else {
+        return a.SG_UE > b.SG_UE
+    }
+})
+console.timeEnd('Ordenando por nome de registro...')
+let memoria = process.memoryUsage().heapUsed / 1024 / 1024
+console.log('Depois: ', candidatos)
+console.log({trocas, comps, passadas, memoria})

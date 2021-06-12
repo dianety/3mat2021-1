@@ -122,7 +122,7 @@ console.log(densidadeDemo(564733.18,14812617))
 
 */
 
-for (i=0; i<estadosNe.length; i++){
+for (let i=0; i<estadosNe.length; i++){
     let densidade = densidadeDemo(estadosNe[i].area,estadosNe[i].populacao)
     estadosNe[i]['densidade demográfica'] = densidade
     delete estadosNe[i].sigla
