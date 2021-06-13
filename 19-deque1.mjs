@@ -1,4 +1,5 @@
 import {Deque} from './lib/Deque.mjs'
+// import {Deque as Deque2} from './lib/Deque2.mjs // -> forma de importar classe com nome igual de outro arquivo
 
 let deque = new Deque()
 
